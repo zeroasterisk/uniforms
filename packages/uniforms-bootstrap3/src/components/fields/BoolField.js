@@ -4,8 +4,8 @@ import {connectField} from 'uniforms';
 
 import FormGroup from './FormGroup';
 
-const Bool = props =>
-    <FormGroup {...props}>
+const Bool = ({label, labelBefore, ...props}) =>
+    <FormGroup label={labelBefore} {...props}>
         <section className={classnames(props.inputClassName, `checkbox${props.inline ? '-inline' : ''}`)}>
             <label htmlFor={props.id}>
                 <input
