@@ -10,6 +10,7 @@ import {Meteor} from 'meteor/meteor';
 import presets from '../lib/presets';
 import schema  from '../lib/schema';
 
+import CustomFormExample       from './CustomFormExample';
 import ApplicationForm         from './ApplicationForm';
 import ApplicationPreviewField from './ApplicationPreviewField';
 import ApplicationPropsField   from './ApplicationPropsField';
@@ -41,6 +42,8 @@ class Application extends Component {
 
     render () {
         return (
+          <div>
+            <CustomFormExample />
             <ApplicationForm label={false} model={this.state} onChange={this.onChange} schema={schema} spacing={3}>
                 <section className="panelLeft" >
                     <nav className="panelGroupNavbar">
@@ -71,6 +74,7 @@ class Application extends Component {
 
                 <ApplicationPreviewField name="props" nameTheme="theme" />
             </ApplicationForm>
+          </div>
         );
     }
 }
